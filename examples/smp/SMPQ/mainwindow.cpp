@@ -569,12 +569,12 @@ void MainWindow::insertNewColumnCSV()
             modeltoCSV->insertColumns(modeltoCSV->columnCount(),1);
             modeltoCSV->setHorizontalHeaderItem(modeltoCSV->columnCount()-1,new QStandardItem(dimension +" Position"));
             modeltoCSV->horizontalHeaderItem(modeltoCSV->columnCount()-1)->
-                    setToolTip("The policy position of an actor regarding the question (with or against)");
+                    setToolTip("The stated position, or advocacy, of the actor");
 
             modeltoCSV->insertColumns(modeltoCSV->columnCount(),1);
             modeltoCSV->setHorizontalHeaderItem(modeltoCSV->columnCount()-1,new QStandardItem(dimension +" Salience"));
             modeltoCSV->horizontalHeaderItem(modeltoCSV->columnCount()-1)->
-                    setToolTip("How much the actor cares about the question");
+                    setToolTip("The relative importance, or priority, for the actor");
 
         }
         else if(tableType=="XML")
@@ -582,12 +582,12 @@ void MainWindow::insertNewColumnCSV()
             xmlSmpDataModel->insertColumns(xmlSmpDataModel->columnCount(),1);
             xmlSmpDataModel->setHorizontalHeaderItem(xmlSmpDataModel->columnCount()-1,new QStandardItem(dimension +" Position"));
             xmlSmpDataModel->horizontalHeaderItem(xmlSmpDataModel->columnCount()-1)->
-                    setToolTip("The policy position of an actor regarding the question (with or against)");
+                    setToolTip("The stated position, or advocacy, of the actor");
 
             xmlSmpDataModel->insertColumns(xmlSmpDataModel->columnCount(),1);
             xmlSmpDataModel->setHorizontalHeaderItem(xmlSmpDataModel->columnCount()-1,new QStandardItem(dimension +" Salience"));
             xmlSmpDataModel->horizontalHeaderItem(xmlSmpDataModel->columnCount()-1)->
-                    setToolTip("How much the actor cares about the question");
+                    setToolTip("The relative importance, or priority, for the actor");
         }
     }
 }
@@ -599,12 +599,12 @@ void MainWindow::createSeperateColumn(QTableWidgetItem * hdr)
     if(hdr->text()=="Position")
     {
         csvTableWidget->horizontalHeaderItem(csvTableWidget->columnCount()-1)->
-                setToolTip("The policy position of an actor regarding the question ( with or against)");
+                setToolTip("The stated position, or advocacy, of the actor");
     }
     else
     {
         csvTableWidget->horizontalHeaderItem(csvTableWidget->columnCount()-1)->
-                setToolTip("How much the actor cares about the question");
+                setToolTip("The relative importance, or priority, for the actor");
     }
 }
 
@@ -731,13 +731,13 @@ void MainWindow::setCSVItemModel(QStandardItemModel *model, QStringList scenario
 
     modeltoCSV->horizontalHeaderItem(0)->setToolTip("An individual, institution or group");
     modeltoCSV->horizontalHeaderItem(1)->setToolTip("A description of the actor");
-    modeltoCSV->horizontalHeaderItem(2)->setToolTip("How much can the actor influence other actors");
+    modeltoCSV->horizontalHeaderItem(2)->setToolTip("The relative power or political clout for the actor");
     for(int col=3; col <modeltoCSV->columnCount()-1; ++col)
     {
         modeltoCSV->horizontalHeaderItem(col)->
-                setToolTip("The policy position of an actor regarding the question ( with or against)");
+                setToolTip("The stated position, or advocacy, of the actor");
         modeltoCSV->horizontalHeaderItem(++col)->
-                setToolTip("How much the actor cares about the question");
+                setToolTip("The relative importance, or priority, for the actor");
 
     }
 
@@ -870,7 +870,7 @@ void MainWindow::setDBItemModelEdit(/*QSqlTableModel *modelEdit*/)
         csvTableWidget->setHorizontalHeaderItem(1,new QTableWidgetItem("Description"));
         csvTableWidget->horizontalHeaderItem(1)->setToolTip("A description of the actor");
         csvTableWidget->setHorizontalHeaderItem(2,new QTableWidgetItem("Influence"));
-        csvTableWidget->horizontalHeaderItem(2)->setToolTip("How much can the actor influence other actors");
+        csvTableWidget->horizontalHeaderItem(2)->setToolTip("The relative power or political clout for the actor");
 
         int k=0;
         for(int i=3 ; i <csvTableWidget->columnCount(); i=i+2)
@@ -880,10 +880,10 @@ void MainWindow::setDBItemModelEdit(/*QSqlTableModel *modelEdit*/)
 
             csvTableWidget->setHorizontalHeaderItem(i ,new QTableWidgetItem(heading +" \n Position"));
             csvTableWidget->horizontalHeaderItem(i)->
-                    setToolTip("The policy position of an actor regarding the question ( with or against)");
+                    setToolTip("The stated position, or advocacy, of the actor");
             csvTableWidget->setHorizontalHeaderItem(i+1,new QTableWidgetItem(heading +" \n Salience"));
             csvTableWidget->horizontalHeaderItem(i+1)->
-                    setToolTip("How much the actor cares about the question");
+                    setToolTip("The relative importance, or priority, for the actor");
             ++k;
         }
         //Updating values
@@ -1033,7 +1033,7 @@ void MainWindow::setDBItemModel(QStandardItemModel *model)
     modeltoDB->setHeaderData(3,Qt::Horizontal,("Description"));
     modeltoDB->horizontalHeaderItem(3)->setToolTip("A description of the actor");
     modeltoDB->setHeaderData(4,Qt::Horizontal,("Influence"));
-    modeltoDB->horizontalHeaderItem(4)->setToolTip("How much can the actor influence other actors");
+    modeltoDB->horizontalHeaderItem(4)->setToolTip("The relative power or political clout for the actor");
 
     int k=0;
     for(int i=5 ; i <modeltoDB->columnCount(); i=i+2)
@@ -1043,9 +1043,9 @@ void MainWindow::setDBItemModel(QStandardItemModel *model)
 
         modeltoDB->setHeaderData(i,Qt::Horizontal ,( heading +" \n Position" ));
         modeltoDB->horizontalHeaderItem(i)->
-                setToolTip("The policy position of an actor regarding the question ( with or against)");
+                setToolTip("The stated position, or advocacy, of the actor");
         modeltoDB->setHeaderData(i+1,Qt::Horizontal,( heading +" \n Salience" ));
-        modeltoDB->horizontalHeaderItem(i+1)->setToolTip("How much the actor cares about the question");
+        modeltoDB->horizontalHeaderItem(i+1)->setToolTip("The relative importance, or priority, for the actor");
         ++k;
     }
 
@@ -1183,7 +1183,7 @@ void MainWindow::createNewSMPData(bool bl)
     csvTableWidget->horizontalHeaderItem(1)->setToolTip("A description of the actor");
     csvTableWidget->insertColumn(csvTableWidget->columnCount());
     csvTableWidget->setHorizontalHeaderItem(2,new QTableWidgetItem("Influence"));
-    csvTableWidget->horizontalHeaderItem(2)->setToolTip("How much can the actor influence other actors");
+    csvTableWidget->horizontalHeaderItem(2)->setToolTip("The relative power or political clout for the actor");
 
     insertNewColumnCSV();
 
@@ -1674,11 +1674,11 @@ void MainWindow::createLinePlotsDockWindows()
     initializeLineGraphDock();
 
     lineGraphDock->setWidget(lineGraphMainFrame);
-    lineGraphDock->setToolTip("The line plot represents the changes \n of the actors positions overtime");
+    lineGraphDock->setToolTip("The Line Plot displays the actors' \n changing Positions by turn");
     addDockWidget(Qt::BottomDockWidgetArea, lineGraphDock);
     viewMenu->addAction(lineGraphDock->toggleViewAction());
-    viewMenu->actions().at(1)->setToolTip("Show/hide the line plot displaying \n the positions of all actor in all turns");
-    viewMenu->actions().at(1)->setStatusTip("Show/hide the line plot displaying the positions of all actor in all turns");
+    viewMenu->actions().at(1)->setToolTip("Show/hide the Line Plot displaying \n the positions of all actors in all turns");
+    viewMenu->actions().at(1)->setStatusTip("Show/hide the Line Plot displaying the positions of all actors in all turns");
     connect(lineGraphDock,SIGNAL(dockLocationChanged(Qt::DockWidgetArea)),this,SLOT(dockWindowChanged()));
     lineGraphDock->setVisible(false);
 }
@@ -1693,12 +1693,12 @@ void MainWindow::createBarPlotsDockWindows()
     initializeBarGraphDock();
 
     barGraphDock->setWidget(barGraphMainFrame);
-    barGraphDock->setToolTip("The bar plot represents the positions \n of the actors for each turn");
+    barGraphDock->setToolTip("The Bar Plot displays the Effective Power \n and Positions of actors for each turn");
 
     addDockWidget(Qt::BottomDockWidgetArea, barGraphDock);
     viewMenu->addAction(barGraphDock->toggleViewAction());
-    viewMenu->actions().at(2)->setToolTip("Show/hide the bar plot displaying the position of all actors in each turn");
-    viewMenu->actions().at(2)->setStatusTip("Show/hide the bar plot displaying the position of all actors in each turn");
+    viewMenu->actions().at(2)->setToolTip("Show/hide the Bar Plot displaying the position of all actors in each turn");
+    viewMenu->actions().at(2)->setStatusTip("Show/hide the Bar Plot displaying the position of all actors in each turn");
 
     connect(barGraphDock,SIGNAL(dockLocationChanged(Qt::DockWidgetArea)),this,SLOT(dockWindowChanged()));
     barGraphDock->setVisible(false);
@@ -2286,7 +2286,7 @@ void MainWindow::displayMenuTableWidget(QPoint pos)
                         text = header;
                     }
                     csvTableWidget->horizontalHeaderItem(csvTableWidget->currentColumn())->
-                            setToolTip("The policy position of an actor regarding the question ( with or against)");
+                            setToolTip("The stated position, or advocacy, of the actor");
                 }
                 else
                 {
@@ -2306,7 +2306,7 @@ void MainWindow::displayMenuTableWidget(QPoint pos)
                         text = header;
                     }
                     csvTableWidget->horizontalHeaderItem(csvTableWidget->currentColumn())->
-                            setToolTip("How much the actor cares about the question");
+                            setToolTip("The relative importance, or priority, for the actor");
                 }
                 csvTableWidget->setHorizontalHeaderItem(csvTableWidget->currentColumn(),new QTableWidgetItem(text));
 
@@ -2325,7 +2325,7 @@ void MainWindow::displayMenuTableWidget(QPoint pos)
             csvTableWidget->insertColumn(csvTableWidget->currentColumn());
             csvTableWidget->setHorizontalHeaderItem(csvTableWidget->currentColumn()-1,new QTableWidgetItem("Position"));
             csvTableWidget->horizontalHeaderItem(csvTableWidget->currentColumn()-1)->
-                    setToolTip("The policy position of an actor regarding the question ( with or against)");
+                    setToolTip("The stated position, or advocacy, of the actor");
             statusBar()->showMessage("Position Column Inserted");
         }
         else
@@ -2340,7 +2340,7 @@ void MainWindow::displayMenuTableWidget(QPoint pos)
             csvTableWidget->insertColumn(csvTableWidget->currentColumn());
             csvTableWidget->setHorizontalHeaderItem(csvTableWidget->currentColumn()-1,new QTableWidgetItem("Salience"));
             csvTableWidget->horizontalHeaderItem(csvTableWidget->currentColumn()-1)->
-                    setToolTip("How much the actor cares about the question");
+                    setToolTip("The relative importance, or priority, for the actor");
             statusBar()->showMessage("Salience Column Inserted");
         }
         else
@@ -2440,7 +2440,7 @@ void MainWindow::displayMenuTableView(QPoint pos)
                             text = header;
                         }
                         modeltoCSV->horizontalHeaderItem(csvTableView->currentIndex().column())->
-                                setToolTip("The policy position of an actor regarding the question (with or against)");
+                                setToolTip("The stated position, or advocacy, of the actor");
                     }
                     else
                     {
@@ -2460,7 +2460,7 @@ void MainWindow::displayMenuTableView(QPoint pos)
                             text = header;
                         }
                         modeltoCSV->horizontalHeaderItem(csvTableView->currentIndex().column())->
-                                setToolTip("How much the actor cares about the question");
+                                setToolTip("The relative importance, or priority, for the actor");
 
                     }
                     modeltoCSV->setHeaderData(csvTableView->currentIndex().column(),Qt::Horizontal,text);
@@ -2478,7 +2478,7 @@ void MainWindow::displayMenuTableView(QPoint pos)
                 modeltoCSV->insertColumn(csvTableView->currentIndex().column());
                 modeltoCSV->setHeaderData(csvTableView->currentIndex().column()-1,Qt::Horizontal,"Position");
                 modeltoCSV->horizontalHeaderItem(csvTableView->currentIndex().column()-1)->
-                        setToolTip("The policy position of an actor regarding the question (with or against)");
+                        setToolTip("The stated position, or advocacy, of the actor");
                 statusBar()->showMessage("Column Inserted, Header changed");
             }
             else
@@ -2492,7 +2492,7 @@ void MainWindow::displayMenuTableView(QPoint pos)
                 modeltoCSV->insertColumn(csvTableView->currentIndex().column());
                 modeltoCSV->setHeaderData(csvTableView->currentIndex().column()-1,Qt::Horizontal,"Salience");
                 modeltoCSV->horizontalHeaderItem(csvTableView->currentIndex().column()-1)->
-                        setToolTip("How much the actor cares about the question");
+                        setToolTip("The relative importance, or priority, for the actor");
 
                 statusBar()->showMessage("Column Inserted, Header changed");
             }

@@ -361,7 +361,7 @@ void MainWindow::initializeModelParametersDock()
     votingRuleLabel->setAlignment(Qt::AlignHCenter);
 
     QLabel *bigRAdjustLabel =  new QLabel(" BigRAdjust ");
-    bigRAdjustLabel->setToolTip("Controls how accurately actor i is able to estimate, relative to an anchor\n of his own risk attitude,"
+    bigRAdjustLabel->setToolTip("Controls how accurately actor i is able to estimate, relative to an anchor\nof its own risk attitude,"
                                 " the risk attitude\n of actor j (which is known to the model)");
     bigRAdjustLabel->setFrameStyle(QFrame::StyledPanel);
     bigRAdjustLabel->setAlignment(Qt::AlignHCenter);
@@ -471,9 +471,9 @@ void MainWindow::initializeModelParametersDock()
                                     Qt::ToolTipRole);
     votingRuleComboBox->setItemData(3,"The vote is proportional to the average of Prop and Cubic",
                                     Qt::ToolTipRole);
-    votingRuleComboBox->setItemData(5,"Influence is exerted asymmetrically: it is proportional to the difference"
-                                      "\n of utilities if negative (a loss in utility),"
-                                      "\nit is proportional to 2/3 of the difference; if positive (a gain in utility)",
+    votingRuleComboBox->setItemData(5,"Influence is exerted asymmetrically: It is proportional to the difference"
+                                      "\n of utilities if negative (a loss in utility)."
+                                      "\n It is proportional to 2/3 of the difference, if positive (a gain in utility).",
                                     Qt::ToolTipRole);
     votingRuleComboBox->setItemData(4,"The vote is proportional to the cubed difference in utilities", Qt::ToolTipRole);
     v4->addWidget(votingRuleLabel,0,Qt::AlignBottom);
@@ -482,20 +482,20 @@ void MainWindow::initializeModelParametersDock()
 
     QVBoxLayout * v5 = new QVBoxLayout;
     bigRAdjustComboBox->addItems(bigAdjList);
-    bigRAdjustComboBox->setToolTip("Controls how accurately actor i is able to estimate, relative to an anchor of his own risk attitude,"
+    bigRAdjustComboBox->setToolTip("Controls how accurately actor i is able to estimate, relative to an anchor of its own risk attitude,"
                                    "\n the risk attitude of actor j (which is known to the model)");
-    bigRAdjustComboBox->setItemData(0,"Actor i judges actor j's risk attitude as being identical to his risk attitude",
+    bigRAdjustComboBox->setItemData(0,"Actor i judges actor j's risk attitude as being identical to its risk attitude",
                                     Qt::ToolTipRole);
-    bigRAdjustComboBox->setItemData(1,"Actor i estimates actor j's risk attitude by interpolating between them, such that his estimate"
-                                      "\n is closer (2/3 anchored, 1/3 adjusted) to his risk attitude (default)",
+    bigRAdjustComboBox->setItemData(1,"Actor i estimates actor j's risk attitude by interpolating between them, such that its estimate"
+                                      "\n is closer (2/3 anchored, 1/3 adjusted) to its risk attitude (default)",
                                     Qt::ToolTipRole);
-    bigRAdjustComboBox->setItemData(2,"Actor i estimates actor j's risk attitude by interpolating midway between his "
+    bigRAdjustComboBox->setItemData(2,"Actor i estimates actor j's risk attitude by interpolating midway between its "
                                       "\nrisk attitude and actor j's actual risk attitude",
                                     Qt::ToolTipRole);
     bigRAdjustComboBox->setItemData(4,"Actor i judges actor j's risk attitude correctly",
                                     Qt::ToolTipRole);
     bigRAdjustComboBox->setItemData(3,"Actor i estimates actor j's risk attitude by interpolating between them, such that "
-                                      "\nhis estimate is closer (1/3 anchored, 2/3 adjusted) to actor j's risk attitude",
+                                      "\nits estimate is closer (1/3 anchored, 2/3 adjusted) to actor j's risk attitude",
                                     Qt::ToolTipRole);
 
     v5->addWidget(bigRAdjustLabel,0,Qt::AlignBottom);
@@ -506,17 +506,17 @@ void MainWindow::initializeModelParametersDock()
     bigRRangeComboBox->addItems(bigRangeList);
     bigRRangeComboBox->setToolTip("Controls actors' risk tolerances, and hence the curvature of their utility functions");
     bigRRangeComboBox->setItemData(0,"Sets risk tolerances in the range [0,1] such that actors with the most probable"
-                                     "\nposition are perfectly risk averse (1), wile actors holding the least probable "
+                                     "\nposition are perfectly risk averse (1), while actors holding the least probable "
                                      "\nposition are perfectly risk tolerant (0)",
                                    Qt::ToolTipRole);
     bigRRangeComboBox->setItemData(1,"Sets risk tolerances in the range [-½,1] such that actors with the most probable "
-                                     "\nposition are perfectly risk averse (1), wile actors holding the least probable"
+                                     "\nposition are perfectly risk averse (1), while actors holding the least probable"
                                      "\n position are somewhat risk seeking, with an aversion of -½ (default)If the coalition "
                                      "\nactor k has joined loses, k must take the position of the winning coalition; otherwise"
                                      "\n it does not need to change position (default)",
                                    Qt::ToolTipRole);
     bigRRangeComboBox->setItemData(2,"Sets risk tolerances in the range [-1,1] such that actors with the most probable position"
-                                     "\nare perfectly risk averse (1), wile actors holding the least probable position are "
+                                     "\nare perfectly risk averse (1), while actors holding the least probable position are "
                                      "\nperfectly risk seeking (-1)",
                                    Qt::ToolTipRole);
     v6->addWidget(bigRRangeLabel,0,Qt::AlignBottom);
@@ -529,7 +529,7 @@ void MainWindow::initializeModelParametersDock()
                                          "actors i and j");
     thirdPartyCommitComboBox->setItemData(0,"No matter which coalition actor k joins (i or j), actor k never changes position",
                                           Qt::ToolTipRole);
-    thirdPartyCommitComboBox->setItemData(1,"If the coalition actor k has joined loses, k must take the position of the winning"
+    thirdPartyCommitComboBox->setItemData(1,"If the coalition actor joined by k loses, k must take the position of the winning"
                                             "\ncoalition; otherwise it does not need to change position (default)",
                                           Qt::ToolTipRole);
     thirdPartyCommitComboBox->setItemData(2,"Actor k is fully committed to the coalition it joins, and must adopt the position "
