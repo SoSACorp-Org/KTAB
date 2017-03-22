@@ -472,8 +472,8 @@ void MainWindow::initializeModelParametersDock()
     votingRuleComboBox->setItemData(3,"The vote is proportional to the average of Prop and Cubic",
                                     Qt::ToolTipRole);
     votingRuleComboBox->setItemData(5,"Influence is exerted asymmetrically: It is proportional to the difference"
-                                      "\n of utilities if negative (a loss in utility)."
-                                      "\n It is proportional to 2/3 of the difference, if positive (a gain in utility).",
+                                      "\nof utilities if negative (a loss in utility)."
+                                      "\nIt is proportional to 2/3 of the difference, if positive (a gain in utility).",
                                     Qt::ToolTipRole);
     votingRuleComboBox->setItemData(4,"The vote is proportional to the cubed difference in utilities", Qt::ToolTipRole);
     v4->addWidget(votingRuleLabel,0,Qt::AlignBottom);
@@ -483,11 +483,11 @@ void MainWindow::initializeModelParametersDock()
     QVBoxLayout * v5 = new QVBoxLayout;
     bigRAdjustComboBox->addItems(bigAdjList);
     bigRAdjustComboBox->setToolTip("Controls how accurately actor i is able to estimate, relative to an anchor of its own risk attitude,"
-                                   "\n the risk attitude of actor j (which is known to the model)");
+                                   "\nthe risk attitude of actor j (which is known to the model)");
     bigRAdjustComboBox->setItemData(0,"Actor i judges actor j's risk attitude as being identical to its risk attitude",
                                     Qt::ToolTipRole);
     bigRAdjustComboBox->setItemData(1,"Actor i estimates actor j's risk attitude by interpolating between them, such that its estimate"
-                                      "\n is closer (2/3 anchored, 1/3 adjusted) to its risk attitude (default)",
+                                      "\nis closer (2/3 anchored, 1/3 adjusted) to its risk attitude (default)",
                                     Qt::ToolTipRole);
     bigRAdjustComboBox->setItemData(2,"Actor i estimates actor j's risk attitude by interpolating midway between its "
                                       "\nrisk attitude and actor j's actual risk attitude",
@@ -511,9 +511,9 @@ void MainWindow::initializeModelParametersDock()
                                    Qt::ToolTipRole);
     bigRRangeComboBox->setItemData(1,"Sets risk tolerances in the range [-½,1] such that actors with the most probable "
                                      "\nposition are perfectly risk averse (1), while actors holding the least probable"
-                                     "\n position are somewhat risk seeking, with an aversion of -½ (default)If the coalition "
+                                     "\nposition are somewhat risk seeking, with an aversion of -½ (default)If the coalition "
                                      "\nactor k has joined loses, k must take the position of the winning coalition; otherwise"
-                                     "\n it does not need to change position (default)",
+                                     "\nit does not need to change position (default)",
                                    Qt::ToolTipRole);
     bigRRangeComboBox->setItemData(2,"Sets risk tolerances in the range [-1,1] such that actors with the most probable position"
                                      "\nare perfectly risk averse (1), while actors holding the least probable position are "
