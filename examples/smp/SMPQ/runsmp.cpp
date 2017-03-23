@@ -529,7 +529,7 @@ void MainWindow::initializeModelParametersDock()
                                          "actors i and j");
     thirdPartyCommitComboBox->setItemData(0,"No matter which coalition actor k joins (i or j), actor k never changes position",
                                           Qt::ToolTipRole);
-    thirdPartyCommitComboBox->setItemData(1,"If the coalition actor joined by k loses, k must take the position of the winning"
+    thirdPartyCommitComboBox->setItemData(1,"If the coalition joined by actor k loses, k must take the position of the winning"
                                             "\ncoalition; otherwise it does not need to change position (default)",
                                           Qt::ToolTipRole);
     thirdPartyCommitComboBox->setItemData(2,"Actor k is fully committed to the coalition it joins, and must adopt the position "
